@@ -36,8 +36,8 @@ caption model.team data:
 -- ftd.column:
 padding.rem: 1.5
 background.solid: #181818
-width.fixed.calc: calc(min(320px, 100%))
-min-height.fixed.px: 320
+width.fixed.calc: calc(min(425px, 100%))
+height.fixed.px: 425
 spacing.fixed.rem: 1
 border-radius.rem: 1
 

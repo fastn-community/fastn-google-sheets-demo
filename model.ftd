@@ -2,5 +2,5 @@
 string name:
 string members:
 string email:
-string cookies:
 string description:
+string cookies:
