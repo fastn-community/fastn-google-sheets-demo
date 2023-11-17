@@ -36,7 +36,7 @@ caption model.team data:
 -- ftd.column:
 padding.rem: 1.5
 background.solid: #181818
-width.fixed.calc: calc(min(425px, 100%))
+width.fixed.calc: min(425px, 100%)
 height.fixed.px: 425
 spacing.fixed.rem: 1
 border-radius.rem: 1
@@ -46,6 +46,8 @@ role: $inherited.types.copy-large
 color: #ffffff
 
 -- ftd.text: $team-card.data.description
+height.fixed.rem: 3.25
+overflow: hidden
 role: $inherited.types.copy-small
 color: #f8f8f8
 

@@ -13,7 +13,7 @@ db: https://docs.google.com/spreadsheets/d/1DkV_E49-UWTKX5hlajJ3wcap9iRyTdJOPHSs
 sheet: Participating Teams
 q: $q
 
-SELECT * WHERE B CONTAINS $q::STRING LABEL B "name", C "members", D "email", E "cookies", F "description"
+SELECT * WHERE B CONTAINS $q::STRING LABEL B "name", C "members", D "email", E "description", F "cookies"
 
 
 
