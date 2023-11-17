@@ -1,0 +1,58 @@
+-- import: fastn/processors as pr
+-- import: hack/model
+-- import: hack/components
+
+
+-- model.team list teams:
+$processor$: pr.sql
+db: https://docs.google.com/spreadsheets/d/1DkV_E49-UWTKX5hlajJ3wcap9iRyTdJOPHSsmd4gW6I
+sheet: Participating Teams
+
+SELECT * LABEL B "name", C "members", D "email", E "cookies", F "description"
+
+
+
+
+-- ftd.document: fastn hackathon
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+background.solid: #000000
+padding.rem: 2
+spacing.fixed.rem: 2
+
+-- components.header:
+
+-- components.search-box:
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+background.solid: #000000
+spacing.fixed.rem: 1
+
+-- ftd.text: Participating Teams
+role: $inherited.types.heading-small
+color: #ffffff
+
+-- ftd.row:
+width: fill-container
+height: fill-container
+wrap: true
+spacing.fixed.rem: 2
+
+-- components.team-card: $t
+for: $t in $teams
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.document
+
+
+
+

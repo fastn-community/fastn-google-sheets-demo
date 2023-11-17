@@ -1,0 +1,131 @@
+-- import: hack/model
+
+-- component header:
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+align-content: center
+
+
+-- ftd.text: hackathon
+link: /
+role: $inherited.types.heading-large
+color: #ffffff
+
+
+-- ftd.text: 🚀 Join the Challenge
+link: https://forms.gle/K1VGaeanxtDiZeH77
+open-in-new-tab: true
+role: $inherited.types.copy-small
+style: bold
+color: #000000
+background.solid: #ffffff
+padding.rem: .5
+padding-horizontal.rem: 1
+text-align: center
+
+
+-- end: ftd.row
+
+-- end: header
+
+-- component team-card:
+caption model.team data:
+
+-- ftd.column:
+padding.rem: 1.5
+background.solid: #181818
+width.fixed.calc: calc(min(320px, 100%))
+min-height.fixed.px: 320
+spacing.fixed.rem: 1
+border-radius.rem: 1
+
+-- ftd.text: $team-card.data.name
+role: $inherited.types.copy-large
+color: #ffffff
+
+-- ftd.text: $team-card.data.description
+role: $inherited.types.copy-small
+color: #f8f8f8
+
+-- ftd.text: Members
+role: $inherited.types.copy-small
+style: bold
+color: #f8f8f8
+
+-- ftd.text: $team-card.data.members
+role: $inherited.types.copy-small
+color: #ffffff
+
+-- ftd.text: Are they bringing cookies? 🍪
+role: $inherited.types.copy-small
+style: bold
+color: #f8f8f8
+
+-- ftd.text: $team-card.data.cookies
+role: $inherited.types.copy-regular
+style: bold
+color: #f8f8f8
+
+-- ftd.text: Get in touch
+link: $get-mail-link(a = $team-card.data.email)
+role: $inherited.types.copy-small
+style: bold
+color: #000000
+background.solid: #ffffff
+padding.rem: .5
+padding-horizontal.rem: 1
+border-radius.rem: 1
+
+-- end: ftd.column
+
+-- end: team-card
+
+
+
+-- component search-box:
+string $q: *$ftd.empty
+
+-- ftd.row:
+spacing.fixed.rem: 1
+align-content: center
+
+-- ftd.text-input:
+padding.rem: 1
+background.solid: #000000
+border-width.px: 1
+border-style: solid
+border-color: #ffffff
+color: #ffffff
+value: $search-box.q
+placeholder: Search teams
+$on-input$: $ftd.set-string($a = $search-box.q, v = $VALUE)
+
+-- ftd.text: Search
+role: $inherited.types.copy-small
+style: bold
+color: #000000
+background.solid: #ffffff
+padding.rem: .85
+padding-horizontal.rem: 1
+$on-click$: $handle-search($q = $search-box.q)
+
+-- end: ftd.row
+
+-- end: search-box
+
+
+
+
+-- string get-mail-link(a):
+string a:
+
+"mailto://" + a
+
+
+
+-- string handle-search(q):
+string $q:
+
+window.open("/search?q=" + q, "_self")

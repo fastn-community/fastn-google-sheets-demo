@@ -1,0 +1,6 @@
+-- record team:
+string name:
+string members:
+string email:
+string cookies:
+string description:
