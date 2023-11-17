@@ -1,5 +1,8 @@
 -- import: hack/model
 
+
+;; Header component
+
 -- component header:
 
 -- ftd.row:
@@ -29,6 +32,10 @@ text-align: center
 -- end: ftd.row
 
 -- end: header
+
+
+
+;; Team card component
 
 -- component team-card:
 caption model.team data:
