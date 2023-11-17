@@ -39,6 +39,7 @@ text-align: center
 
 -- component team-card:
 caption model.team data:
+boolean $show-full-text: false
 
 -- ftd.column:
 padding.rem: 1.5
@@ -52,11 +53,35 @@ border-radius.rem: 1
 role: $inherited.types.copy-large
 color: #ffffff
 
+-- ftd.column:
+align-content: center
+spacing: space-between
+min-height.fixed.rem: 5
+
 -- ftd.text: $team-card.data.description
 height.fixed.rem: 3.25
+height if { team-card.show-full-text }: hug-content
 overflow: hidden
+overflow if { team-card.show-full-text }: auto
 role: $inherited.types.copy-small
 color: #f8f8f8
+
+-- ftd.text: show
+if: { len(team-card.data.description) > 80 && !team-card.show-full-text }
+anchor: parent
+bottom.px: 0
+role: $inherited.types.copy-small
+style: bold
+color: #787878
+background.solid: rgba(30, 30, 30, .8)
+padding.rem: .5
+padding-horizontal.rem: 1
+border-radius.rem: 1
+width: hug-content
+cursor: pointer
+$on-click$: $ftd.toggle($a = $team-card.show-full-text)
+
+-- end: ftd.column
 
 -- ftd.text: Members
 role: $inherited.types.copy-small
