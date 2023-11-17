@@ -33,7 +33,6 @@ $q: *$q
 
 -- ftd.column:
 width: fill-container
-height: fill-container
 background.solid: #000000
 spacing.fixed.rem: 1
 
@@ -49,7 +48,6 @@ color: #b3b3b3
 -- ftd.row:
 if: { !ftd.is_empty(teams) }
 width: fill-container
-height: fill-container
 wrap: true
 spacing.fixed.rem: 2
 
