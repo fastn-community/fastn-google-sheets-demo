@@ -1,4 +1,5 @@
 -- import: hack/model
+-- import: hack/assets
 
 
 ;; Header component
@@ -10,14 +11,22 @@ width: fill-container
 spacing: space-between
 align-content: center
 
-
 -- ftd.text: hackathon
 link: /
 role: $inherited.types.heading-large
 color: #ffffff
 
+-- ftd.row:
+width: fill-container
+align-content: right
+spacing.fixed.rem: 2
 
--- ftd.text: 🚀 Join the Challenge
+-- ftd.image: $assets.files.images.github-dark.svg
+link: https://github.com/fastn-community/fastn-google-sheets-demo/
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: 🚀 Join
 link: https://forms.gle/K1VGaeanxtDiZeH77
 open-in-new-tab: true
 role: $inherited.types.copy-small
@@ -28,6 +37,7 @@ padding.rem: .5
 padding-horizontal.rem: 1
 text-align: center
 
+-- end: ftd.row
 
 -- end: ftd.row
 
@@ -118,8 +128,11 @@ border-radius.rem: 1
 
 
 
+;; Search Box
+
+
 -- component search-box:
-string $q: *$ftd.empty
+string $q:
 
 -- ftd.row:
 spacing.fixed.rem: 1
@@ -162,4 +175,6 @@ string a:
 -- string handle-search(q):
 string $q:
 
-window.open("/search?q=" + q, "_self")
+vq = args.q.get();
+lq = vq.toLowerCase();
+window.open("/search/?q=" + lq, "_self")

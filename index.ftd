@@ -26,6 +26,7 @@ overflow: auto
 -- components.header:
 
 -- components.search-box:
+$q: *$ftd.empty
 
 -- ftd.column:
 width: fill-container
