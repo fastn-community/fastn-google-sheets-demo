@@ -145,7 +145,7 @@ border-width.px: 1
 border-style: solid
 border-color: #ffffff
 color: #ffffff
-value: $search-box.q
+default-value: $search-box.q
 placeholder: Search teams
 $on-input$: $ftd.set-string($a = $search-box.q, v = $VALUE)
 
